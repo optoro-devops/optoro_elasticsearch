@@ -1,0 +1,63 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: 11.16.4
+  vagrantfiles:
+    - attach_disk.rb
+  customize:
+    natdnshostresolver1: "on"
+    memory: 2048
+provisioner: chef_zero
+
+platforms:
+- name: ubuntu-14.04
+  driver_config:
+    box: opscode_ubuntu-14.04_chef-provisionerless
+    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box
+
+suites:
+- name: master
+  encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
+  run_list:
+    - recipe[optoro_elasticsearch::test]
+    - recipe[optoro_elasticsearch::master]
+- name: client
+  encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
+  run_list:
+    - recipe[optoro_elasticsearch::test]
+    - recipe[optoro_elasticsearch::client]
+- name: data
+  encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
+  run_list:
+    - recipe[optoro_elasticsearch::test]
+    - recipe[optoro_elasticsearch::data]
+  attributes:
+    apt:
+      compile_time_update: true
+    build-essential:
+      compile_time: true
+# Test Suite for testing EBS volume creation locally.        
+# - name: data-ec2
+#   encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
+#   run_list:
+#     - recipe[optoro_elasticsearch::test_ec2]
+#     - recipe[optoro_elasticsearch::data]
+#  attributes:
+#    apt:
+#      compile_time_update: true
+#    build-essential:
+#      compile_time: true
+#  driver:
+#    name: ec2
+#    aws_ssh_key_id: kp-2011-05-02
+#    ssh_key: <%= ENV['HOME'] %>/.ssh/kp-2011-05-02.pem
+#    require_chef_omnibus: 11.16.4
+#    security_group_ids: ["sg-69ce330d"]
+#    subnet_id: subnet-2f5f9f04
+#    region: us-east-1
+#    availability_zone: us-east-1e
+#    flavor_id: m3.medium
+#    image_id: ami-76e27e1e
+#    username: ubuntu
+#    iam_profile_name: TestKitchenRole
+#    associate_public_ip: false
