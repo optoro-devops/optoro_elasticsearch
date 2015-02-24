@@ -7,10 +7,10 @@ default['optoro']['ec2']['elasticsearch']['data']['devices'] = {
     'fs_check_command' => 'dumpe2fs',
     'ebs' => {
       'device' => '/dev/sdf',
-      'size' => 100,
+      'size' => 1000,
       'delete_on_termination' => true,
       'type' => 'io1',
-      'iops'  => 1000
+      'iops'  => 2000
     }
   }
 }
