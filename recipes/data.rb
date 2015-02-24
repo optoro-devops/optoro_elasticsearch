@@ -14,6 +14,13 @@ include_recipe 'elasticsearch::search_discovery'
 
 # Only include ebs if running in ec2.
 if node['ec2']
+  # Fog dependencies
+  include_recipe 'build-essential'
+  chef_gem 'nokogiri' do
+    version '1.6.3.1'
+    action :install
+  end
+
   node.default['elasticsearch']['data']['devices'] = node['optoro']['ec2']['elasticsearch']['data']['devices']
   include_recipe 'elasticsearch::ebs'
 else
