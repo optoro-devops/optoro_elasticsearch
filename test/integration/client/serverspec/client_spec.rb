@@ -1,9 +1,5 @@
 require 'spec_helper'
 
-# Give elasticsearch time to come up
-# JAVA!!!
-sleep(60)
-
 describe 'optoro_elasticsearch::client' do
   describe process('java') do
     it { should be_running }

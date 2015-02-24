@@ -9,8 +9,7 @@ default['optoro']['ec2']['elasticsearch']['data']['devices'] = {
       'device' => '/dev/sdf',
       'size' => 1000,
       'delete_on_termination' => true,
-      'type' => 'io1',
-      'iops'  => 2000
+      'type' => 'gp2'
     }
   }
 }
