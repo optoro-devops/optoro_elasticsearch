@@ -17,4 +17,12 @@ describe 'optoro_elasticsearch::client' do
   describe command('curl -XGET http://localhost:9200') do
     its(:stdout) { should match '"tagline" : "You Know, for Search"' }
   end
+
+  %w(bigdesk
+     head
+     kopf).each do |plugin|
+    describe file("/usr/local/elasticsearch/plugins/#{plugin}") do
+      it { should be_directory }
+    end
+  end
 end
