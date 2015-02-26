@@ -8,9 +8,7 @@ node.set['elasticsearch']['node_master'] = 'false'
 
 include_recipe 'java'
 include_recipe 'monit'
-include_recipe 'elasticsearch'
-include_recipe 'elasticsearch::monit'
-include_recipe 'elasticsearch::search_discovery'
+include_recipe 'optoro_elasticsearch::default'
 
 # Only include ebs if running in ec2.
 if node['ec2']
