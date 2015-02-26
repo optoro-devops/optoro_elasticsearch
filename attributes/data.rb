@@ -22,3 +22,6 @@ default['optoro']['default']['elasticsearch']['data']['devices'] = {
     'fs_check_command' => 'dumpe2fs'
   }
 }
+default['elasticsearch']['path']['data'] = [
+  '/elasticsearch/disk1'
+]
