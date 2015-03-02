@@ -5,4 +5,6 @@
 node.set['elasticsearch']['http_enabled'] = 'false'
 node.set['elasticsearch']['node_data'] = 'false'
 node.set['elasticsearch']['node_master'] = 'true'
+node.set['elasticsearch']['allocated_memory'] = '512M'
+
 include_recipe 'optoro_elasticsearch'
