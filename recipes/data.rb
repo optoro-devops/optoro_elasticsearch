@@ -5,6 +5,9 @@
 node.set['elasticsearch']['http_enabled'] = 'false'
 node.set['elasticsearch']['node_data'] = 'true'
 node.set['elasticsearch']['node_master'] = 'false'
+if node['elasticsearch']['allocated_memory'].to_i > 2048
+  node.set['elasticsearch']['env_options'] = '-Xmn256m -XX:SurvivorRatio=3'
+end
 
 include_recipe 'java'
 include_recipe 'monit'
