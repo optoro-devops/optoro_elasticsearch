@@ -9,3 +9,11 @@ default['elasticsearch']['plugins'] = {
   'lukas-vlcek/bigdesk' => {},
   'lmenezes/elasticsearch-kopf' => {}
 }
+default['elasticsearch']['custom_config']['indices.memory.index_buffer_size'] = '30%'
+default['elasticsearch']['custom_config']['indices.memory.min_index_buffer_size'] = '96mb'
+default['elasticsearch']['custom_config']['indices.fielddata.cache.size'] = '15%'
+default['elasticsearch']['custom_config']['indices.fielddata.cache.expire'] = '6h'
+default['elasticsearch']['custom_config']['indices.cache.filter.size'] = '15%'
+default['elasticsearch']['custom_config']['indices.cache.filter.expire'] = '6h'
+default['elasticsearch']['custom_config']['index.refresh_interval'] = '30s'
+default['elasticsearch']['custom_config']['index.translog.flush_threshold_ops'] = 50_000
