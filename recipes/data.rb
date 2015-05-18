@@ -2,7 +2,7 @@
 # in the elasticsearch cookbook. It improperly merges
 # attributes. This gets around it. Will update when a
 # proper fix is found.
-node.set['elasticsearch']['http_enabled'] = 'false'
+node.set['elasticsearch']['http_enabled'] = 'true'
 node.set['elasticsearch']['node_data'] = 'true'
 node.set['elasticsearch']['node_master'] = 'false'
 if node['elasticsearch']['allocated_memory'].to_i > 2048

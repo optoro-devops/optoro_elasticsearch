@@ -30,7 +30,7 @@ describe 'optoro_elasticsearch::data' do
 
         it 'Creates data config for elasticsearch' do
           expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('cluster.name: UNCONFIGURED')
-          expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('http.enabled: false')
+          expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('http.enabled: true')
           expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('node.data: true')
           expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('node.master: false')
         end

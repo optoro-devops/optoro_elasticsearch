@@ -22,7 +22,7 @@ describe 'optoro_elasticsearch::master' do
 
         it 'Creates master config for elasticsearch' do
           expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('cluster.name: UNCONFIGURED')
-          expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('http.enabled: false')
+          expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('http.enabled: true')
           expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('node.data: false')
           expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('node.master: true')
         end

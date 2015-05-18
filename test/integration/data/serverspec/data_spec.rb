@@ -10,6 +10,10 @@ describe 'optoro_elasticsearch::data' do
     it { should be_running }
   end
 
+  describe port(9200) do
+    it { should be_listening }
+  end
+
   describe port(9300) do
     it { should be_listening }
   end
