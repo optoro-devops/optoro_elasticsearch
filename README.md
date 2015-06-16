@@ -16,6 +16,7 @@ Installs ElasticSearch
 * monit (~> 0.7.5)
 * java (~> 1.31.0)
 * elasticsearch (~> 0.3.13)
+* optoro_metrics
 
 # Attributes
 
