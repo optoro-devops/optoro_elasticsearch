@@ -8,7 +8,8 @@ default['elasticsearch']['cluster']['name'] = 'UNCONFIGURED'
 default['elasticsearch']['plugins'] = {
   'mobz/elasticsearch-head' => {},
   'lukas-vlcek/bigdesk' => {},
-  'lmenezes/elasticsearch-kopf' => {}
+  'lmenezes/elasticsearch-kopf' => {},
+  'elasticsearch/elasticsearch-cloud-aws' => { 'version' => '2.6.0' }
 }
 default['elasticsearch']['custom_config']['indices.memory.index_buffer_size'] = '30%'
 default['elasticsearch']['custom_config']['indices.memory.min_index_buffer_size'] = '96mb'

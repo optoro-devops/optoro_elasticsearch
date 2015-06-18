@@ -20,7 +20,8 @@ describe 'optoro_elasticsearch::client' do
 
   %w(bigdesk
      head
-     kopf).each do |plugin|
+     kopf
+     cloud-aws).each do |plugin|
     describe file("/usr/local/elasticsearch/plugins/#{plugin}") do
       it { should be_directory }
     end
