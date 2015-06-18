@@ -75,5 +75,8 @@ default['optoro']['default']['elasticsearch']['data']['devices'] = {
   }
 }
 default['elasticsearch']['path']['data'] = [
-  '/elasticsearch/disk1'
+  '/elasticsearch/disk2',
+  '/elasticsearch/disk3',
+  '/elasticsearch/disk4',
+  '/elasticsearch/disk5'
 ]

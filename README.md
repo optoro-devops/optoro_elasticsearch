@@ -25,7 +25,8 @@ Installs ElasticSearch
 * `node['elasticsearch']['path']['data']` -  Defaults to `[ ... ]`.
 * `node['java']['jdk_version']` -  Defaults to `7`.
 * `node['java']['openjdk_package']` -  Defaults to `openjdk-7-jre-headless`.
-* `node['elasticsearch']['version']` -  Defaults to `1.4.4`.
+* `node['elasticsearch']['version']` -  Defaults to `1.6.0`.
+* `node['elasticsearch']['host']` -  Defaults to `https://download.elastic.co`.
 * `node['elasticsearch']['jmx']` -  Defaults to `true`.
 * `node['elasticsearch']['cluster']['name']` -  Defaults to `UNCONFIGURED`.
 * `node['elasticsearch']['plugins']` -  Defaults to `{ ... }`.
