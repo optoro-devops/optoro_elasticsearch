@@ -19,3 +19,5 @@ default['elasticsearch']['custom_config']['indices.cache.filter.size'] = '15%'
 default['elasticsearch']['custom_config']['indices.cache.filter.expire'] = '6h'
 default['elasticsearch']['custom_config']['index.refresh_interval'] = '30s'
 default['elasticsearch']['custom_config']['index.translog.flush_threshold_ops'] = 50_000
+
+default['elasticsearch']['limits']['nofile'] = 65_535
