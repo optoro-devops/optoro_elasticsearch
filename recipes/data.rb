@@ -5,6 +5,12 @@
 node.set['elasticsearch']['http_enabled'] = 'true'
 node.set['elasticsearch']['node_data'] = 'true'
 node.set['elasticsearch']['node_master'] = 'false'
+
+# Set a minimum amount of system memory to leave free
+if (node['memory']['total'].to_i - (node['elasticsearch']['allocated_memory'].to_i * 1024) / 1024) < 2560
+  node.set['elasticsearch']['allocated_memory'] = (node['memory']['total'].to_i / 1024) - 2560
+end
+
 if node['elasticsearch']['allocated_memory'].to_i > 2048
   node.set['elasticsearch']['env_options'] = '-Xmn256m -XX:SurvivorRatio=3'
 end
