@@ -29,6 +29,8 @@ suites:
 - name: data
   encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
   run_list:
+    - recipe[apt]
+    - recipe[build-essential]
     - recipe[optoro_elasticsearch::test]
     - recipe[optoro_elasticsearch::data]
   attributes:
@@ -36,6 +38,12 @@ suites:
       compile_time_update: true
     build-essential:
       compile_time: true
+- name: standalone
+  encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
+  run_list:
+    - recipe[optoro_elasticsearch::test]
+    - recipe[optoro_elasticsearch::standalone]
+
 # Test Suite for testing EBS volume creation locally.        
 # - name: data-ec2
 #   encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
