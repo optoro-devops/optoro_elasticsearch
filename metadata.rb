@@ -4,7 +4,7 @@ maintainer_email 'devops@optoro.com'
 license 'MIT'
 description 'Installs ElasticSearch'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.0.20'
+version '0.0.21'
 
 supports 'ubuntu', '= 14.04'
 
