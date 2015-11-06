@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe 'optoro_elasticsearch::data' do
+  # Give ES time to come up
+  sleep(60)
+
   describe process('java') do
     it { should be_running }
   end
