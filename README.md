@@ -6,7 +6,7 @@ Installs ElasticSearch
 
 ## Platform:
 
-* Ubuntu (= 14.04)
+* ubuntu (= 14.04)
 
 ## Cookbooks:
 
@@ -15,8 +15,7 @@ Installs ElasticSearch
 * aws
 * monit (~> 0.7.5)
 * java (~> 1.31.0)
-* elasticsearch (< 1.0.0)
-* optoro_metrics
+* elasticsearch (= 0.3.13)
 
 # Attributes
 
@@ -38,8 +37,7 @@ Installs ElasticSearch
 * `node['elasticsearch']['custom_config']['indices.cache.filter.expire']` -  Defaults to `6h`.
 * `node['elasticsearch']['custom_config']['index.refresh_interval']` -  Defaults to `30s`.
 * `node['elasticsearch']['custom_config']['index.translog.flush_threshold_ops']` -  Defaults to `50_000`.
-* `node['elasticsearch']['custom_config']['node.az']` -  Defaults to `node['ec2']['placement_availability_zone']`.
-* `node['elasticsearch']['limits']['nofile']` -  Defaults to `65535`.
+* `node['elasticsearch']['limits']['nofile']` -  Defaults to `65_535`.
 
 # Recipes
 

@@ -4,7 +4,7 @@ maintainer_email 'devops@optoro.com'
 license 'MIT'
 description 'Installs ElasticSearch'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.0.21'
+version '0.0.22'
 
 supports 'ubuntu', '= 14.04'
 
@@ -23,7 +23,6 @@ depends 'build-essential'
 depends 'aws'
 depends 'monit', '~> 0.7.5'
 depends 'java', '~> 1.31.0'
-depends 'optoro_metrics'
 
 # CHEF12 fix
 depends 'elasticsearch', '= 0.3.13'
