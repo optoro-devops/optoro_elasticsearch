@@ -11,10 +11,9 @@ describe 'optoro_elasticsearch::client' do
         end
 
         %w(java::default
-           monit::default
            elasticsearch::default
-           elasticsearch::monit
            elasticsearch::search_discovery
+           elasticsearch::aws
            elasticsearch::plugins).each do |recipe|
           it "Includes #{recipe}" do
             expect(chef_run).to include_recipe(recipe)

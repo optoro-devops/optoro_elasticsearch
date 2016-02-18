@@ -15,7 +15,7 @@ describe 'optoro_elasticsearch::client' do
   end
 
   describe command('curl -XGET http://localhost:9200') do
-    its(:stdout) { should match '"tagline" : "You Know, for Search"' }
+    its(:stdout) { should match(/You Know, for Search/) }
   end
 
   %w(bigdesk

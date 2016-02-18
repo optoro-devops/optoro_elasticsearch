@@ -13,7 +13,6 @@ Installs ElasticSearch
 * apt
 * build-essential
 * aws
-* monit (~> 0.7.5)
 * java (~> 1.31.0)
 * elasticsearch (= 0.3.13)
 
