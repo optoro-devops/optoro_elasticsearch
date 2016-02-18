@@ -16,7 +16,6 @@ if node['elasticsearch']['allocated_memory'].to_i > 2048
 end
 
 include_recipe 'java'
-include_recipe 'monit'
 include_recipe 'optoro_elasticsearch::default'
 
 # Only include ebs if running in ec2.

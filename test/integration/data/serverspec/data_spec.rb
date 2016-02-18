@@ -30,9 +30,7 @@ describe 'optoro_elasticsearch::data' do
       it do
         should be_mounted.with(:type => 'ext4',
                                :options => {
-                                 :rw => true
-                               }
-        )
+                                 :rw => true })
       end
     end
   end

@@ -11,9 +11,7 @@ describe 'optoro_elasticsearch::data' do
         end
 
         %w(java::default
-           monit::default
            elasticsearch::default
-           elasticsearch::monit
            elasticsearch::search_discovery
            elasticsearch::data).each do |recipe|
           it "Includes #{recipe}" do
@@ -33,6 +31,14 @@ describe 'optoro_elasticsearch::data' do
           expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('http.enabled: true')
           expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('node.data: true')
           expect(chef_run).to render_file('/usr/local/etc/elasticsearch/elasticsearch.yml').with_content('node.master: false')
+        end
+
+        it 'Installs the nokogiri gem on EC2' do
+          chef_run.node.automatic['ec2'] = true
+          chef_run.converge(described_recipe)
+
+          expect(chef_run).to install_chef_gem('nokogiri')
+            .with_version('1.6.3.1')
         end
       end
     end
