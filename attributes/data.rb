@@ -53,13 +53,13 @@ default['optoro']['ec2']['elasticsearch']['data']['devices'] = {
   }
 }
 default['optoro']['default']['elasticsearch']['data']['devices'] = {
-  '/dev/sdb' => {
-    'file_system' => 'ext4',
-    'mount_options' => 'rw,user',
-    'mount_path' => '/elasticsearch/disk1',
-    'format_command' => 'mkfs.ext4 -F',
-    'fs_check_command' => 'dumpe2fs'
-  }
+  # '/dev/sdb' => {
+  #   'file_system' => 'ext4',
+  #   'mount_options' => 'rw,user',
+  #   'mount_path' => '/elasticsearch/disk1',
+  #   'format_command' => 'mkfs.ext4 -F',
+  #   'fs_check_command' => 'dumpe2fs'
+  # }
 }
 default['elasticsearch']['path']['data'] = [
   '/elasticsearch/disk2',
